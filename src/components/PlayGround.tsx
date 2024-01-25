@@ -3,9 +3,12 @@ import styled from "styled-components";
 
 interface Props {
   width?: string;
+  bg?: string;
+  grid?: boolean;
+  gray?: boolean;
+  type?: string;
   title?: string;
   description?: string;
-  bg?: string;
   children: ReactNode;
 }
 
@@ -36,14 +39,24 @@ const Box = styled.div`
 
 export default function PlayGround({
   width,
+  type = "",
   title,
   description,
   children,
 }: Props) {
   const styles = {
-    width: width ? `${width}px` : "",
+    width: width && `${width}px`,
+    // when gray
+    backgroundColor: type === "gray" ? "#f8f8f8" : "",
+    borderColor: type === "gray" ? "#ddd" : "",
+    // when grid
+    backgroundSize: type === "grid" ? "10px,30px,10px 10px,30px 30px" : "",
+    backgroundImage:
+      type === "grid"
+        ? "linear-gradient(90deg, #eaeaea 1px, transparent 1px), linear-gradient(90deg, #eaeaea 1px, transparent 1px), linear-gradient(#eaeaea 1px, transparent 1px), linear-gradient(#eaeaea 1px, transparent 1px)"
+        : "",
+    backgroundPosition: type === "grid" ? "-1px -1px" : "",
   };
-
   return (
     <>
       <Title>{title}</Title>
