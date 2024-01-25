@@ -1,10 +1,10 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 export default function Aside() {
   return (
     <aside id="aside">
       <section>
-        <h3 className="category">Foundation</h3>
+        <p className="category">Foundation</p>
         <ul className="aside-nav">
           <li>
             <NavLink to="/layout">Layout</NavLink>
@@ -21,7 +21,7 @@ export default function Aside() {
         </ul>
       </section>
       <section>
-        <h3 className="category">Components</h3>
+        <p className="category">Components</p>
         <ul className="aside-nav">
           <li>
             <NavLink to="/badge">Badge</NavLink>
@@ -48,7 +48,7 @@ export default function Aside() {
             <NavLink to="/buttons">Dropdown</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Input</NavLink>
+            <NavLink to="/input">Input</NavLink>
           </li>
           <li>
             <NavLink to="/buttons">List</NavLink>

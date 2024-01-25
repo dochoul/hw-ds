@@ -28,6 +28,7 @@ $asideWidth: 250px;
           font-size: 18px;
           color: #131313;
           font-weight: 600;
+          padding: 20px;
         }
       }
     }
@@ -49,6 +50,7 @@ $asideWidth: 250px;
         font-size: 14px;
         letter-spacing: 0.2px;
         margin-bottom: 5px;
+        font-weight: 700;
       }
       .aside-nav {
         margin-left: 1px;
@@ -80,7 +82,7 @@ $asideWidth: 250px;
     .description {
       color: #808080;
       margin: 28px 0 20px;
-      letter-spacing: 0.5px;
+      letter-spacing: -0.5px;
       font-weight: 500;
     }
     hr {

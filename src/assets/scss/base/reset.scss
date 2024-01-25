@@ -51,7 +51,7 @@ blockquote::before,
 blockquote::after,
 q::before,
 q::after {
-  content: '';
+  content: "";
 }
 input,
 select,
@@ -81,7 +81,8 @@ button,
 a:link,
 a:visited,
 a:hover {
-  font-family: 'Spoqa Han Sans Neo', 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', '돋움', dotum, sans-serif;
+  font-family: "Spoqa Han Sans Neo", "Malgun Gothic", "맑은 고딕",
+    "Apple SD Gothic Neo", "돋움", dotum, sans-serif;
   color: #333;
   line-height: 1.5;
   letter-spacing: -1px;
@@ -123,8 +124,8 @@ html {
   box-sizing: border-box;
 }
 
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
