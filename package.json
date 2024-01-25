@@ -13,9 +13,7 @@
   },
   "dependencies": {
     "@lukemorales/query-key-factory": "^1.3.2",
-    "axios": "^1.6.3",
     "dayjs": "^1.11.10",
-    "gutils": "^1.2.6",
     "immer": "^10.0.3",
     "lodash": "^4.17.21",
     "qs": "^6.11.2",
