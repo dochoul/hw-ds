@@ -45,52 +45,52 @@ export default function Aside() {
             <NavLink to="/modal">Dialog(Modal)</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Dropdown</NavLink>
+            <NavLink to="/dropdown">Dropdown</NavLink>
           </li>
           <li>
             <NavLink to="/input">Input</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">List</NavLink>
+            <NavLink to="/list">List</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Loading</NavLink>
+            <NavLink to="/loading">Loading</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Pagination</NavLink>
+            <NavLink to="/pagination">Pagination</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Progress</NavLink>
+            <NavLink to="/progress">Progress</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Radio</NavLink>
+            <NavLink to="/radio">Radio</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Select</NavLink>
+            <NavLink to="/select">Select</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Tab</NavLink>
+            <NavLink to="/tab">Tab</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Tag</NavLink>
+            <NavLink to="/tag">Tag</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">TimePicker</NavLink>
+            <NavLink to="/timePicker">TimePicker</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Toast</NavLink>
+            <NavLink to="/toast">Toast</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Toggle</NavLink>
+            <NavLink to="/toggle">Toggle</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Tooltip</NavLink>
+            <NavLink to="/tooltip">Tooltip</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Transfer</NavLink>
+            <NavLink to="/transfer">Transfer</NavLink>
           </li>
           <li>
-            <NavLink to="/buttons">Table</NavLink>
+            <NavLink to="/table">Table</NavLink>
           </li>
         </ul>
       </section>

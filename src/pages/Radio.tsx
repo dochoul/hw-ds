@@ -1,11 +1,11 @@
 import PageTitle from "../components/document/PageTitle";
 
-export default function DatePicker() {
+export default function Radio() {
   return (
     <div>
       <PageTitle
-        title="DatePicker"
-        description="얘는 라이브러리를 사용해야 할듯"
+        title="Radio"
+        description="단일선택을 해야하는 곳에 사용합니다."
       ></PageTitle>
     </div>
   );
