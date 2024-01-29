@@ -1,19 +1,20 @@
 import { ReactNode } from "react";
+import "./tooltip.scss";
 
 interface Props {
   label: string;
   position?: string;
-  background?: string;
   color?: string;
+  background?: string;
   children: ReactNode;
 }
 
 export default function Tooltip({
-  children,
   label,
   position,
-  background,
   color,
+  background,
+  children,
 }: Props) {
   const makeTT = (event: any) => {
     let ttBtn = event.currentTarget;
@@ -67,12 +68,12 @@ export default function Tooltip({
         caret.style.borderTopColor = bgColor;
         break;
 
-      case "top-left":
+      case "top-start":
         caret.style.borderWidth = "6px 6px 0px 6px";
         caret.style.borderTopColor = bgColor;
         break;
 
-      case "top-right":
+      case "top-end":
         caret.style.borderWidth = "6px 6px 0px 6px";
         caret.style.borderTopColor = bgColor;
         break;
@@ -82,12 +83,12 @@ export default function Tooltip({
         caret.style.borderBottomColor = bgColor;
         break;
 
-      case "bottom-left":
+      case "bottom-start":
         caret.style.borderWidth = "0px 6px 6px 6px";
         caret.style.borderBottomColor = bgColor;
         break;
 
-      case "bottom-right":
+      case "bottom-end":
         caret.style.borderWidth = "0px 6px 6px 6px";
         caret.style.borderBottomColor = bgColor;
         break;
@@ -123,7 +124,7 @@ export default function Tooltip({
 
     // 툴팁 배경 컬러 변경
     bg = background;
-    if (bg === null || bg === undefined) bg = "#575757";
+    if (bg === null || bg === undefined) bg = "#585858";
     tt.style.background = bg;
 
     // Caret(꼬다리)
@@ -175,7 +176,7 @@ export default function Tooltip({
         tt.classList.add("gt-transform-origin-top-center");
         break;
 
-      case "top-left":
+      case "top-start":
         tt.style.left = ttBtnL + "px";
         tt.style.top = ttBtnT - ttH - offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
@@ -183,7 +184,7 @@ export default function Tooltip({
         tt.classList.add("gt-transform-origin-bottom-left");
         break;
 
-      case "top-right":
+      case "top-end":
         tt.style.left = ttBtnL + Math.abs(ttBtnW - ttW) + "px";
         tt.style.top = ttBtnT - ttH - offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
@@ -191,7 +192,7 @@ export default function Tooltip({
         tt.classList.add("gt-transform-origin-bottom-right");
         break;
 
-      case "bottom-left":
+      case "bottom-start":
         tt.style.left = ttBtnL + "px";
         tt.style.top = ttBtnT + ttBtnH + offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
@@ -199,7 +200,7 @@ export default function Tooltip({
         tt.classList.add("gt-transform-origin-top-left");
         break;
 
-      case "bottom-right":
+      case "bottom-end":
         tt.style.left = ttBtnL + Math.abs(ttBtnW - ttW) + "px";
         tt.style.top = ttBtnT + ttBtnH + offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
@@ -226,7 +227,12 @@ export default function Tooltip({
   };
 
   return (
-    <span onMouseOver={makeTT} onMouseLeave={removeTT}>
+    <span
+      onMouseOver={makeTT}
+      onMouseLeave={removeTT}
+      onFocus={makeTT}
+      onBlur={removeTT}
+    >
       {children}
     </span>
   );
