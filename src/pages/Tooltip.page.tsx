@@ -15,7 +15,6 @@ export default function TooltipPage() {
           <button>툴팁</button>
         </Tooltip>
       </PlayGround>
-
       {/* <div className="placement-wrap">
         <div>
           <Tooltip label="안녕하세요" position="top">

@@ -228,6 +228,7 @@ export default function Tooltip({
 
   return (
     <span
+      style={{ display: "inline-flex", cursor: "pointer" }}
       onMouseOver={makeTT}
       onMouseLeave={removeTT}
       onFocus={makeTT}
