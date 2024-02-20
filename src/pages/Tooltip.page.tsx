@@ -15,50 +15,62 @@ export default function TooltipPage() {
           <button>툴팁</button>
         </Tooltip>
       </PlayGround>
-      {/* <div className="placement-wrap">
-        <div>
-          <Tooltip label="안녕하세요" position="top">
-            <button>Top</button>
-          </Tooltip>
-          <Tooltip label="안녕하세요" position="top-start">
-            <button>Top Start</button>
-          </Tooltip>
-          <Tooltip label="안녕하세요" position="top-end">
-            <button>Top End</button>
-          </Tooltip>
-        </div>
 
-        <div>
-          <Tooltip label="안녕하세요" position="right">
-            <button>Right</button>
-          </Tooltip>
-          <Tooltip label="안녕하세요" position="right-start">
-            <button>Right Start</button>
-          </Tooltip>
-          <Tooltip label="안녕하세요" position="right-end">
-            <button>Right End</button>
-          </Tooltip>
-        </div>
+      <h2>Bottom</h2>
+      <PlayGround width="480">
+        <Tooltip label="안녕하세요" position="bottom">
+          <button>툴팁</button>
+        </Tooltip>
+      </PlayGround>
 
-        <div>
-          <Tooltip label="안녕하세요" position="bottom">
-            <button>Bottom</button>
-          </Tooltip>
-          <Tooltip label="안녕하세요" position="bottom-start">
-            <button>Bottom End</button>
-          </Tooltip>
-          <Tooltip label="안녕하세요" position="bottom-end">
-            <button>Bottom End</button>
-          </Tooltip>
-        </div>
-      </div>
+      <h2>Right</h2>
+      <PlayGround width="480">
+        <Tooltip label="안녕하세요" position="right">
+          <button>툴팁</button>
+        </Tooltip>
+      </PlayGround>
+
+      <h2>Left</h2>
+      <PlayGround width="480">
+        <Tooltip label="안녕하세요" position="left">
+          <button>툴팁</button>
+        </Tooltip>
+      </PlayGround>
+
+      <h2>Top-Start</h2>
+      <PlayGround width="480">
+        <Tooltip label="안녕하세요" position="top-start">
+          <button>툴팁 😀😀😀😀😀😀😀</button>
+        </Tooltip>
+      </PlayGround>
+
+      <h2>Top-Bottom</h2>
+      <PlayGround width="480">
+        <Tooltip label="안녕하세요" position="top-end">
+          <button>툴팁 😀😀😀😀😀😀😀</button>
+        </Tooltip>
+      </PlayGround>
+
+      <h2>Bottom-Start</h2>
+      <PlayGround width="480">
+        <Tooltip label="안녕하세요" position="bottom-start">
+          <button>툴팁 😀😀😀😀😀😀😀</button>
+        </Tooltip>
+      </PlayGround>
+
+      <h2>Bottom-End</h2>
+      <PlayGround width="480">
+        <Tooltip label="안녕하세요" position="bottom-end">
+          <button>툴팁 😀😀😀😀😀😀😀</button>
+        </Tooltip>
+      </PlayGround>
 
       <Tooltip label="안녕하세요" background="red">
         <button>툴팁 배경색 변경</button>
       </Tooltip>
       <Tooltip label="안녕하세요" color="aquamarine">
         <button>툴팁 폰트 컬러 변경</button>
-      </Tooltip> */}
+      </Tooltip>
     </div>
   );
 }

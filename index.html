@@ -2,12 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://www.hiworks.com/static/images/favicon/favicon.png" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://www.hiworks.com/static/images/favicon/favicon.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hiworks design system</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Start of Rocket.Chat Livechat Script -->
+    <script type="text/javascript">
+      (function (w, d, s, u) {
+        w.RocketChat = function (c) {
+          w.RocketChat._.push(c);
+        };
+        w.RocketChat._ = [];
+        w.RocketChat.url = u;
+        var h = d.getElementsByTagName(s)[0],
+          j = d.createElement(s);
+        j.async = true;
+        j.src =
+          "http://192.168.73.136/livechat/rocketchat-livechat.min.js?_=201903270000";
+        h.parentNode.insertBefore(j, h);
+      })(window, document, "script", "http://192.168.73.136/livechat");
+    </script>
   </body>
 </html>

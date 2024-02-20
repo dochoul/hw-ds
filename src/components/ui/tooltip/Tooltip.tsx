@@ -51,53 +51,53 @@ export default function Tooltip({
   };
 
   /* 꼬다리 만들기 */
-  const makeCaret = (caret: any, placement: any, bgColor: any) => {
-    switch (placement) {
-      case "left":
-        caret.style.borderWidth = "6px 0px 6px 6px";
-        caret.style.borderLeftColor = bgColor;
-        break;
+  const makeCaret = (caret: any, placement: any, bgColor: string) => {
+    caret.style.backgroundColor = bgColor;
+    // switch (placement) {
+    //   case "left":
+    //     caret.style.borderWidth = "6px 0px 6px 6px";
+    //     caret.style.borderLeftColor = bgColor;
+    //     break;
 
-      case "right":
-        caret.style.borderWidth = "6px 6px 6px 0px";
-        caret.style.borderRightColor = bgColor;
-        break;
+    //   case "right":
+    //     caret.style.borderWidth = "6px 6px 6px 0px";
+    //     caret.style.borderRightColor = bgColor;
+    //     break;
 
-      case "top":
-        caret.style.borderWidth = "6px 6px 0px 6px";
-        caret.style.borderTopColor = bgColor;
-        break;
+    //   case "top":
+    //     caret.style.borderWidth = "6px 6px 0px 6px";
+    //     caret.style.borderTopColor = bgColor;
+    //     break;
 
-      case "top-start":
-        caret.style.borderWidth = "6px 6px 0px 6px";
-        caret.style.borderTopColor = bgColor;
-        break;
+    //   case "top-start":
+    //     caret.style.borderWidth = "6px 6px 0px 6px";
+    //     caret.style.borderTopColor = bgColor;
+    //     break;
 
-      case "top-end":
-        caret.style.borderWidth = "6px 6px 0px 6px";
-        caret.style.borderTopColor = bgColor;
-        break;
+    //   case "top-end":
+    //     caret.style.borderWidth = "6px 6px 0px 6px";
+    //     caret.style.borderTopColor = bgColor;
+    //     break;
 
-      case "bottom":
-        caret.style.borderWidth = "0px 6px 6px 6px";
-        caret.style.borderBottomColor = bgColor;
-        break;
+    //   case "bottom":
+    //     caret.style.borderWidth = "0px 6px 6px 6px";
+    //     caret.style.borderBottomColor = bgColor;
+    //     break;
 
-      case "bottom-start":
-        caret.style.borderWidth = "0px 6px 6px 6px";
-        caret.style.borderBottomColor = bgColor;
-        break;
+    //   case "bottom-start":
+    //     caret.style.borderWidth = "0px 6px 6px 6px";
+    //     caret.style.borderBottomColor = bgColor;
+    //     break;
 
-      case "bottom-end":
-        caret.style.borderWidth = "0px 6px 6px 6px";
-        caret.style.borderBottomColor = bgColor;
-        break;
+    //   case "bottom-end":
+    //     caret.style.borderWidth = "0px 6px 6px 6px";
+    //     caret.style.borderBottomColor = bgColor;
+    //     break;
 
-      default:
-        caret.style.borderWidth = "6px 6px 0px 6px";
-        caret.style.borderTopColor = bgColor;
-        break;
-    }
+    //   default:
+    //     caret.style.backgroundColor = bgColor;
+    //     break;
+    // }
     return caret;
   };
 
@@ -120,7 +120,6 @@ export default function Tooltip({
 
     // 툴팁 방향 가져오기
     placement = position;
-    console.log(position);
 
     // 툴팁 배경 컬러 변경
     bg = background;
@@ -150,12 +149,14 @@ export default function Tooltip({
     caretW = Math.ceil(caret.offsetWidth);
     caretH = Math.ceil(caret.offsetHeight);
 
+    console.log(caretW, caretH);
+
     // 방향에 따른 툴팁 위치 조정
     switch (placement) {
       case "left":
         tt.style.left = ttBtnL - ttW - offset + "px";
         tt.style.top = ttBtnT + (ttBtnH - ttH) / 2 + "px";
-        caret.style.left = ttW + "px";
+        caret.style.left = ttW - caretH / 2 + "px";
         caret.style.top = ttH / 2 - caretH / 2 + "px";
         tt.classList.add("gt-transform-origin-center-right"); // The transform-origin CSS property sets the origin for an element's transformations.(https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)
         break;
@@ -163,7 +164,7 @@ export default function Tooltip({
       case "right":
         tt.style.left = ttBtnL + ttBtnW + offset + "px";
         tt.style.top = ttBtnT + (ttBtnH - ttH) / 2 + "px";
-        caret.style.left = -caretW + "px";
+        caret.style.left = -caretW + caretW / 2 + "px";
         caret.style.top = ttH / 2 - caretH / 2 + "px";
         tt.classList.add("gt-transform-origin-center-left");
         break;
@@ -172,7 +173,7 @@ export default function Tooltip({
         tt.style.left = ttBtnL + (ttBtnW - ttW) / 2 + "px";
         tt.style.top = ttBtnT + ttBtnH + offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
-        caret.style.top = -caretH + "px";
+        caret.style.top = -caretH + caretH / 2 + "px";
         tt.classList.add("gt-transform-origin-top-center");
         break;
 
@@ -180,39 +181,40 @@ export default function Tooltip({
         tt.style.left = ttBtnL + "px";
         tt.style.top = ttBtnT - ttH - offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
-        caret.style.top = ttH + "px";
-        tt.classList.add("gt-transform-origin-bottom-left");
+        caret.style.top = ttH - caretH / 2 + "px";
+        tt.classList.add("gt-transform-origin-bottom-center");
         break;
 
       case "top-end":
         tt.style.left = ttBtnL + Math.abs(ttBtnW - ttW) + "px";
         tt.style.top = ttBtnT - ttH - offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
-        caret.style.top = ttH + "px";
-        tt.classList.add("gt-transform-origin-bottom-right");
+        caret.style.top = ttH - caretH / 2 + "px";
+        tt.classList.add("gt-transform-origin-bottom-center");
         break;
 
       case "bottom-start":
         tt.style.left = ttBtnL + "px";
         tt.style.top = ttBtnT + ttBtnH + offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
-        caret.style.top = -caretH + "px";
-        tt.classList.add("gt-transform-origin-top-left");
+        caret.style.top = -caretH + caretH / 2 + "px";
+        tt.classList.add("gt-transform-origin-top-center");
         break;
 
       case "bottom-end":
         tt.style.left = ttBtnL + Math.abs(ttBtnW - ttW) + "px";
         tt.style.top = ttBtnT + ttBtnH + offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
-        caret.style.top = -caretH + "px";
-        tt.classList.add("gt-transform-origin-top-right");
+        caret.style.top = -caretH + caretH / 2 + "px";
+        tt.classList.add("gt-transform-origin-top-center");
         break;
 
       case "top":
         tt.style.left = ttBtnL + (ttBtnW - ttW) / 2 + "px";
         tt.style.top = ttBtnT - ttH - offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
-        caret.style.top = ttH + "px";
+        caret.style.top = ttH - caretH / 2 + "px";
+        console.log(1);
         tt.classList.add("gt-transform-origin-bottom-center");
         break;
 
@@ -220,7 +222,8 @@ export default function Tooltip({
         tt.style.left = ttBtnL + (ttBtnW - ttW) / 2 + "px";
         tt.style.top = ttBtnT - ttH - offset + "px";
         caret.style.left = ttW / 2 - caretW / 2 + "px";
-        caret.style.top = ttH + "px";
+        caret.style.top = ttH - caretH / 2 + "px";
+        console.log(caretH);
         tt.classList.add("gt-transform-origin-bottom-center");
         break;
     }
@@ -230,7 +233,7 @@ export default function Tooltip({
     <span
       style={{ display: "inline-flex", cursor: "pointer" }}
       onMouseOver={makeTT}
-      onMouseLeave={removeTT}
+      //onMouseLeave={removeTT}
       onFocus={makeTT}
       onBlur={removeTT}
     >

@@ -9,6 +9,7 @@
   color: #fff;
   background: #575757;
   border-radius: 4px;
+  //border: 1px solid transparent;
   text-align: center;
   user-select: none;
   font-family:
@@ -20,8 +21,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  border-style: solid;
-  border-color: transparent;
+  width: 10px;
+  height: 10px;
+  background-color: #585858;
+  transform: rotate(45deg);
+  //border: 1px solid transparent;
+  // border-style: solid;
+  // border-color: transparent;
 }
 .gt-tooltip.gt-tooltip-show {
   animation: aniTooltipVisible 0.1s forwards;
